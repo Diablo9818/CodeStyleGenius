@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoPlaces : MonoBehaviour
+public class ObjectMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private Transform _allPlacespoint;
+
     private Transform[] _arrayPlaces;
     private int _numberOfPlaceInArrayPlaces;
 
@@ -21,19 +22,19 @@ public class GoPlaces : MonoBehaviour
 
     private void Update()
     {
-        var _pointByNumberInArray = _arrayPlaces[_numberOfPlaceInArrayPlaces];
+        var pointByNumberInArray = _arrayPlaces[_numberOfPlaceInArrayPlaces];
         transform.position = Vector3.MoveTowards(
             transform.position,
-            _pointByNumberInArray.position,
+            pointByNumberInArray.position,
             _speed * Time.deltaTime);
 
-        if (transform.position == _pointByNumberInArray.position)
+        if (transform.position == pointByNumberInArray.position)
         {
-            NextPlaceTakerLogic();
+            MoveToPoint();
         }
     }
 
-    private Vector3 NextPlaceTakerLogic()
+    private Vector3 MoveToPoint()
     {
         _numberOfPlaceInArrayPlaces++;
 

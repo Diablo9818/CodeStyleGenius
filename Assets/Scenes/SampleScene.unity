@@ -629,9 +629,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _prefab: {fileID: 5940284183520806030, guid: f05b247d068469648abbf1e9d6bf8ff9, type: 3}
+  _bullet: {fileID: -5466186585286801045, guid: f05b247d068469648abbf1e9d6bf8ff9, type: 3}
   _objectToShoot: {fileID: 1275317935}
-  _timeWaitShooting: 1
+  _delay: 4
 --- !u!54 &1512162970
 Rigidbody:
   m_ObjectHideFlags: 0
