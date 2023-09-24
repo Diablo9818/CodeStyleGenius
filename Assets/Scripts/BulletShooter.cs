@@ -24,15 +24,15 @@ public class BulletShooter : MonoBehaviour
     private IEnumerator Shoot()
     {
         bool isWork = enabled;
-        Rigidbody bulletRigidbody = _bullet.GetComponent<Rigidbody>();
 
         while (isWork)
         {
             var vector3direction = (_objectToShoot.position - transform.position).normalized;
             var newBullet = Instantiate(_bullet, transform.position + vector3direction, Quaternion.identity);
 
+            Rigidbody newBulletRigidbody = newBullet.GetComponent<Rigidbody>();
             newBullet.transform.up = vector3direction;
-            bulletRigidbody.velocity = vector3direction * _speed;
+            newBulletRigidbody.velocity = vector3direction * _speed;
 
             yield return _timeWaitForNextShooting;
         }
